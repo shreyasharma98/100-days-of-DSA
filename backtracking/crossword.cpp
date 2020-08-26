@@ -41,7 +41,7 @@ void printer(char cross[n][n]){
 
 bool isvalid_vertical(char cross[n][n], int r, int c, string word){
     int j = r;
-    for (int i = 0;i < word.length();i++){
+    for (int i = 0; i< word.length(); i++){
         if (j > 9)
             return false;
         if (cross[j][c] == '+' || (cross[j][c] != '-' && cross[j][c] != word[i]))
@@ -150,15 +150,15 @@ int main(){
     }
     string s;
     cin>>s;
-    vector<string> value;
+    vector<string> words;
     int i=0,j;
     for (; i < s.length(); i++){
         j = i;
         while (s[j] != ';' && j < s.length()){
             j++;
         }
-        value.push_back(s.substr(i, j - i));
+        words.push_back(s.substr(i, j - i));
         i=j;
     }
-    bool x = crossword(arr, value, 0);
+    bool x = crossword(arr, words, 0);
 }
